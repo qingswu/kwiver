@@ -3,7 +3,7 @@ if (NOT DEFINED KWIVER_BOOST_VERSION)
   set(KWIVER_BOOST_VERSION 1.54)
 endif()
 
-find_package(Boost ${KWIVER_BOOST_VERSION} REQUIRED
+find_package(Boost ${KWIVER_BOOST_VERSION} # REQUIRED
   COMPONENTS
   chrono
   date_time

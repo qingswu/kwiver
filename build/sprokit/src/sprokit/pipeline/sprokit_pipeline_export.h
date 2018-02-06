@@ -1,0 +1,42 @@
+
+#ifndef SPROKIT_PIPELINE_EXPORT_H
+#define SPROKIT_PIPELINE_EXPORT_H
+
+#ifdef SPROKIT_PIPELINE_BUILD_AS_STATIC
+#  define SPROKIT_PIPELINE_EXPORT
+#  define SPROKIT_PIPELINE_NO_EXPORT
+#else
+#  ifndef SPROKIT_PIPELINE_EXPORT
+#    ifdef sprokit_pipeline_EXPORTS
+        /* We are building this library */
+#      define SPROKIT_PIPELINE_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define SPROKIT_PIPELINE_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef SPROKIT_PIPELINE_NO_EXPORT
+#    define SPROKIT_PIPELINE_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef SPROKIT_PIPELINE_DEPRECATED
+#  define SPROKIT_PIPELINE_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef SPROKIT_PIPELINE_DEPRECATED_EXPORT
+#  define SPROKIT_PIPELINE_DEPRECATED_EXPORT SPROKIT_PIPELINE_EXPORT SPROKIT_PIPELINE_DEPRECATED
+#endif
+
+#ifndef SPROKIT_PIPELINE_DEPRECATED_NO_EXPORT
+#  define SPROKIT_PIPELINE_DEPRECATED_NO_EXPORT SPROKIT_PIPELINE_NO_EXPORT SPROKIT_PIPELINE_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef SPROKIT_PIPELINE_NO_DEPRECATED
+#    define SPROKIT_PIPELINE_NO_DEPRECATED
+#  endif
+#endif
+
+#endif

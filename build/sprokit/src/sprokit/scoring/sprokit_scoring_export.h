@@ -1,0 +1,42 @@
+
+#ifndef SPROKIT_SCORING_EXPORT_H
+#define SPROKIT_SCORING_EXPORT_H
+
+#ifdef SPROKIT_SCORING_BUILD_AS_STATIC
+#  define SPROKIT_SCORING_EXPORT
+#  define SPROKIT_SCORING_NO_EXPORT
+#else
+#  ifndef SPROKIT_SCORING_EXPORT
+#    ifdef sprokit_scoring_EXPORTS
+        /* We are building this library */
+#      define SPROKIT_SCORING_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define SPROKIT_SCORING_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef SPROKIT_SCORING_NO_EXPORT
+#    define SPROKIT_SCORING_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef SPROKIT_SCORING_DEPRECATED
+#  define SPROKIT_SCORING_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef SPROKIT_SCORING_DEPRECATED_EXPORT
+#  define SPROKIT_SCORING_DEPRECATED_EXPORT SPROKIT_SCORING_EXPORT SPROKIT_SCORING_DEPRECATED
+#endif
+
+#ifndef SPROKIT_SCORING_DEPRECATED_NO_EXPORT
+#  define SPROKIT_SCORING_DEPRECATED_NO_EXPORT SPROKIT_SCORING_NO_EXPORT SPROKIT_SCORING_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef SPROKIT_SCORING_NO_DEPRECATED
+#    define SPROKIT_SCORING_NO_DEPRECATED
+#  endif
+#endif
+
+#endif

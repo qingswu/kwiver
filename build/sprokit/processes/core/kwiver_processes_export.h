@@ -1,0 +1,42 @@
+
+#ifndef KWIVER_PROCESSES_EXPORT_H
+#define KWIVER_PROCESSES_EXPORT_H
+
+#ifdef KWIVER_PROCESSES_BUILD_AS_STATIC
+#  define KWIVER_PROCESSES_EXPORT
+#  define KWIVER_PROCESSES_NO_EXPORT
+#else
+#  ifndef KWIVER_PROCESSES_EXPORT
+#    ifdef kwiver_processes_EXPORTS
+        /* We are building this library */
+#      define KWIVER_PROCESSES_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define KWIVER_PROCESSES_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef KWIVER_PROCESSES_NO_EXPORT
+#    define KWIVER_PROCESSES_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef KWIVER_PROCESSES_DEPRECATED
+#  define KWIVER_PROCESSES_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef KWIVER_PROCESSES_DEPRECATED_EXPORT
+#  define KWIVER_PROCESSES_DEPRECATED_EXPORT KWIVER_PROCESSES_EXPORT KWIVER_PROCESSES_DEPRECATED
+#endif
+
+#ifndef KWIVER_PROCESSES_DEPRECATED_NO_EXPORT
+#  define KWIVER_PROCESSES_DEPRECATED_NO_EXPORT KWIVER_PROCESSES_NO_EXPORT KWIVER_PROCESSES_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef KWIVER_PROCESSES_NO_DEPRECATED
+#    define KWIVER_PROCESSES_NO_DEPRECATED
+#  endif
+#endif
+
+#endif
