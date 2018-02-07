@@ -31,7 +31,7 @@
 #ifndef KWIVER_VITAL_PLUGIN_MODULE_PATHS_H_H_
 #define KWIVER_VITAL_PLUGIN_MODULE_PATHS_H_H_
 
-#define DEFAULT_MODULE_PATHS ";C:/Program Files/KWIVER/lib/sprokit;C:/Program Files/KWIVER/lib/$<CONFIGURATION>/sprokit;C:/Program Files/KWIVER/lib/modules;C:/Program Files/KWIVER/lib/$<CONFIGURATION>/modules"
+#define DEFAULT_MODULE_PATHS ";C:/Program Files/KWIVER/lib/sprokit;C:/Program Files/KWIVER/lib/modules;C:/Program Files/KWIVER/lib/$<CONFIGURATION>/modules"
 #define SHARED_LIB_SUFFIX    ".dll"
 #define PATH_SEPARATOR_CHAR  ';'
 
